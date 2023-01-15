@@ -1,0 +1,40 @@
+<div class="row mb-4">
+  <div class="col-6">
+    <h1>User</h1>
+  </div>
+  <div class="col-6 d-flex justify-content-end">
+    <a href="/adduser" type="button" class="btn btn-primary align-self-center"><i class="bi bi-plus-lg"></i> Add  User</a>
+  </div>
+  <hr>
+</div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">UID</th>
+      <th scope="col">Name</th>
+      <th scope="col">City</th>
+      <th scope="col">E-mail</th>
+      <th scope="col" class="text-end" style="padding-right:100px">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.UID}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.city}}</td>
+      <td>{{this.mail}}</td>
+      <td class="text-end">
+        <a href="/viewuser/{{this.UID}}" type="button" class="btn btn-small btn-success"><i class="bi bi-person-lines-fill"></i> View</a>
+        <a href="/edituser/{{this.UID}}" type="button" class="btn btn-small btn-primary"><i
+            class="bi bi-person-gear"></i> Edit</a>
+        <a href="/{{this.UID}}" type="button" class="btn btn-small btn-danger"><i class="bi bi-person-x"></i> Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+
+  </tbody>
+
+</table>
